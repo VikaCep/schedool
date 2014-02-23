@@ -1,0 +1,62 @@
+// place here your aplication specific SCSS Code
+
+/*
+.row2 {
+  @extend .row;
+  background-color: yellow;
+} */
+
+
+.top-bar {
+  @extend .top-bar;
+}
+.top-bar:hover {
+  background-color: rgba(0,0,0,.6);
+}
+.top-bar-section {
+  font-family: $topbar-link-font-family;
+  ul li:not(.has-form) {
+
+    &.active > a:not(.button) {
+      background-color: $primary-color;
+      border-radius: $global-radius;
+      &:after {
+        color: #FFF;
+      }
+    }
+    .dropdown .active > a:not(.button) {
+      background-color: rgba(0,0,0,.2);
+    }
+  }
+}
+
+.inline-list>li {
+  @extend .inline-list;  
+  margin-left: 0.9rem;  
+}
+.inline-list>li>a {
+  color: #333;
+}
+
+a:hover, a:visited, a:link, a:active
+{    
+  text-decoration: none;
+}
+
+ul.parsley-error-list {
+  font-size: 11px;
+  margin: 2px;
+  list-style-type:none; 
+}
+ul.parsley-error-list li {
+  line-height: 11px;
+}
+
+.add { 
+  @include button();
+  background-color: orange;
+}
+
+.add:hover {
+  background-color: #FF8000;
+}

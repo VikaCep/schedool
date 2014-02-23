@@ -1,0 +1,28 @@
+{
+    "name": "aheissenberger/foundation",
+    "description": "This package does not include the framework. It requires and automatical installs the official framework composer package from zurb and provides command line tools to setup foundation for development with laravel 4 and compass.",
+    "type": "library",
+    "keywords": ["laravel","css","framework"],
+    "homepage": "https://github.com/aheissenberger/foundation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Heissenberger",
+            "email": "andreas.heissenberger@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "zurb/foundation": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/console"
+        ],
+        "psr-0": {
+            "Aheissenberger\\Foundation": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

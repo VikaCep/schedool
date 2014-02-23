@@ -1,0 +1,26 @@
+@extends('layouts.scaffold')
+
+@section('content')
+
+<h4>Edit {{Model}}</h4>
+{{ Form::model(${{model}}, array('method' => 'PATCH', 'route' => array('{{models}}.update', ${{model}}->id))) }}
+<div class="row">
+    <div class="large-6 columns">
+     {{formElements}}
+ 	</div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+      {{ Form::submit('Update', array('class' => 'button')) }}
+      {{ link_to_route('{{models}}.show', 'Cancel', ${{model}}->id, array('class' => 'button alert')) }}
+  </div>
+</div>
+{{ Form::close() }}
+
+@if ($errors->any())
+	<ul>
+		{{ implode('', $errors->all('<li class="error">:message</li>')) }}
+	</ul>
+@endif
+
+@stop

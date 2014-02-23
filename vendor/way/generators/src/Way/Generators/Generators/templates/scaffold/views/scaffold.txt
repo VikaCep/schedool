@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<title>Subjects Book</title>
+	{{ HTML::style('css/app.css') }}	
+	{{ HTML::style("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css") }}	
+</head>
+
+<body>
+
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="/">Home</a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+		</ul>
+
+		<section class="top-bar-section">
+			<!-- Left Nav Section -->
+			<ul class="left">				
+				@if (Auth::check())			
+				<li class="{{Request::path() == 'profile' ? 'active' : ''}}"><a href="{{ URL::route("user/profile") }}">Profile</a></li>
+				<li class="{{Request::path() == 'subjects' ? 'active' : ''}}">{{ link_to_route('subjects.index', 'Subjects') }}</li>
+				@else
+				<li class="{{Request::path() == 'auth/login' ? 'active' : ''}}"><a href="{{ URL::route("auth/login") }}">Login</a></li>
+				@endif
+			</ul>
+			<ul class="right">
+			@if (Auth::check())
+				<li><a href="{{ URL::route("auth/logout") }}">Logout</a></li>			
+			@endif
+			</ul>
+		</section>
+	</nav>
+
+	<!-- End Top Bar -->
+
+	<div class="row">
+		<div class="large-12 columns">
+
+
+
+			<!-- Mobile Header -->
+
+			<div class="row">
+				<div class="large-12 columns show-for-small">				
+					Small screen
+				</div>
+			</div><br>
+
+			<!-- End Mobile Header -->
+
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="row">
+						<!-- Shows -->											
+						<h2 class="subheader">Subjects Book</h2><hr>
+
+						<div class="row">
+							<div class="large-12 column">														
+								@section('messages')
+								@if(Session::has('flash_info'))
+								<div data-alert class="alert-box info">
+									{{ Session::get('flash_info') }}
+								</div>
+								@endif 
+								@if(Session::has('flash_success'))
+								<div data-alert class="alert-box success">
+									{{ Session::get('flash_success') }}
+								</div>
+								@endif   
+								@if(Session::has('flash_warning'))
+    							<div data-alert class="alert-box warning">
+    								@section('warning')
+         							{{ Session::get('flash_warning') }}     
+         							@show  
+    							</div>
+								@endif           						
+								@show											
+								@yield('content')
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Content -->
+
+
+			<!-- Footer -->
+
+			<footer class="row">
+				<div class="large-12 columns"><hr>
+					<div class="row">
+
+						<div class="large-6 columns">
+							
+						</div>
+
+						<div class="large-6 small-12 columns">
+							<ul class="inline-list right">
+								<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter-square"></i></i></a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</footer>
+
+			<!-- End Footer -->
+
+		</div>
+	</div>
+	@section('scripts')
+	{{HTML::script("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")}}	
+	{{HTML::script("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js")}}		
+	{{HTML::script("/js/global.js")}}	
+	{{HTML::script("/js/parsley.js")}}	
+	{{HTML::script('/packages/aheissenberger/foundation/js/foundation/foundation.js')}}
+	<script>
+		$(document).foundation();
+	</script>
+	<!-- End Footer -->
+	@show
+</body>
+
+</html>

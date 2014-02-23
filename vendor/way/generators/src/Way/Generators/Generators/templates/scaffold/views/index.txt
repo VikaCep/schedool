@@ -1,0 +1,29 @@
+@extends('layouts.scaffold')
+
+@section('content')
+
+<h4>All {{Models}}</h4>
+
+<p>{{ link_to_route('{{models}}.create', 'Add new {{model}}') }}</p>
+
+@if (${{models}}->count())
+	<table>
+		<thead>
+			<tr>
+				{{headings}}
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (${{models}} as ${{model}})
+				<tr>
+					{{fields}}
+				</tr>
+			@endforeach
+		</tbody>
+	</table>
+@else
+	There are no {{models}}
+@endif
+
+@stop
