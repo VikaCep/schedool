@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-	<title>Subjects Book</title>
+	<title>Schedool</title>
 	{{ HTML::style('css/app.css') }}	
 	{{ HTML::style('css/foundation-datepicker.css') }}	
 	{{ HTML::style("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css") }}	
+	{{ HTML::style("http://fonts.googleapis.com/css?family=Jura") }}		
 </head>
 
 <body>
@@ -30,39 +31,23 @@
 				@endif
 			</ul>
 			<ul class="right">
-			@if (Auth::check())
+				@if (Auth::check())
 				<li><a href="{{ URL::route("auth/logout") }}">Logout</a></li>			
-			@endif
+				@endif
 			</ul>
 		</section>
 	</nav>
 
 	<!-- End Top Bar -->
 
-	<div class="row">
-		<div class="large-12 columns">
-
-
-
-			<!-- Mobile Header -->
-
-			<div class="row">
-				<div class="large-12 columns show-for-small">				
-					Small screen
-				</div>
-			</div><br>
-
-			<!-- End Mobile Header -->
-
-
+	<div class="row main">
+		<div class="large-12 columns">					
 			<div class="row">
 				<div class="large-12 columns">
 					<div class="row">
-						<!-- Shows -->											
-						<h2 class="subheader">Subjects Book</h2><hr>
-
+						<!-- Shows -->																
 						<div class="row">
-							<div class="large-12 column">														
+							<div class="small-8 large-10 small-centered large-centered columns content">											
 								@section('messages')
 								@if(Session::has('flash_info'))
 								<div data-alert class="alert-box info">
@@ -75,11 +60,11 @@
 								</div>
 								@endif   
 								@if(Session::has('flash_warning'))
-    							<div data-alert class="alert-box warning">
-    								@section('warning')
-         							{{ Session::get('flash_warning') }}     
-         							@show  
-    							</div>
+								<div data-alert class="alert-box warning">
+									@section('warning')
+									{{ Session::get('flash_warning') }}     
+									@show  
+								</div>
 								@endif           						
 								@show											
 								@yield('content')
@@ -89,33 +74,17 @@
 				</div>
 			</div>
 			<!-- End Content -->
-
-
-			<!-- Footer -->
-
-			<footer class="row">
-				<div class="large-12 columns"><hr>
-					<div class="row">
-
-						<div class="large-6 columns">
-							
-						</div>
-
-						<div class="large-6 small-12 columns">
-							<ul class="inline-list right">
-								<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter-square"></i></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-				</div>
-			</footer>
-
-			<!-- End Footer -->
-
 		</div>
 	</div>
+
+	<footer class="footer">
+		<div class="row">
+			<div class="large-12 columns footer-content text-center">		
+			@VikaCep
+			</div>
+		</div>
+	</footer> 
+
 	@section('scripts')
 	{{HTML::script("//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")}}	
 	{{HTML::script("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js")}}		
