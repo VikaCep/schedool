@@ -26,6 +26,7 @@
 				@if (Auth::check())			
 				<li class="{{Request::path() == 'profile' ? 'active' : ''}}"><a href="{{ URL::route("user/profile") }}">Profile</a></li>
 				<li class="{{Request::path() == 'subjects' ? 'active' : ''}}">{{ link_to_route('subjects.index', 'Subjects') }}</li>
+				<li class="{{Request::path() == 'calendar' ? 'active' : ''}}">{{ link_to_route('subjects.index', 'Calendar') }}</li>
 				@else
 				<li class="{{Request::path() == 'auth/login' ? 'active' : ''}}"><a href="{{ URL::route("auth/login") }}">Login</a></li>
 				@endif

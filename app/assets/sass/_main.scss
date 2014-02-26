@@ -37,9 +37,8 @@ body {
   }
 }
 .top-bar:hover {
-  background-color: rgba(0,0,0,.6);
-  .name h1 a {
-    color:  white;
+  /*background-color: rgba(0,0,0,.6);*/
+  .name h1 a {  
     font-weight: bold;
   }
 }
@@ -59,7 +58,7 @@ body {
 
     &.active > a:not(.button) {
       background-color: #ff5a14;
-      border-radius: $global-radius;
+      /*border-radius: $global-radius;*/
       color: white;
       &:after {
         color: #FFF;
@@ -84,10 +83,14 @@ a:hover, a:visited, a:link, a:active
   text-decoration: none;
 }
 
+small.error {
+    background-color: #ff9a54;
+}
+
 ul.parsley-error-list {
   font-size: 11px;
   margin: 2px;
-  list-style-type:none; 
+  list-style-type:none;   
 }
 ul.parsley-error-list li {
   line-height: 11px;

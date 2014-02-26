@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => "virginiamcepeda@gmail.com", 'name' => "Vika"),
+	'from' => array('address' => "******@gmail.com", 'name' => "Vika"),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => "virginiamcepeda@gmail.com",
+	'username' => "******@gmail.com",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => "jumanji32",
+	'password' => "*******",
 
 	/*
 	|--------------------------------------------------------------------------
