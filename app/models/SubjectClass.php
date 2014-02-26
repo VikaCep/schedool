@@ -2,6 +2,7 @@
 
 class SubjectClass extends Eloquent {
 	protected $guarded = array();
+    protected $table = 'subject_classes';    
 
 	public static $rules = array();
 
@@ -12,7 +13,7 @@ class SubjectClass extends Eloquent {
 
     public function weekdays()
     {
-        return $this->belongsTo('Weekday');
+        return $this->hasMany('Weekday');
     }
 
     public function subject()

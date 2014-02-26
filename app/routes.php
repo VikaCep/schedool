@@ -56,10 +56,12 @@ Route::group(["before" => "auth"], function()
 		"uses" => "AuthController@logoutAction"
 		]);
 	Route::resource('subjects', 'SubjectsController');	
-	Route::resource('subjectExams', 'SubjectExamsController');
-	Route::get('/addExam/{idsubjecet}', array(
+	Route::resource('subjectExams', 'SubjectExamsController');	
+	Route::resource('lessons', 'LessonsController');
+	Route::get('/addExam/{idsubject}', array(
 		"as"=>'subjectExams.add',
 		"uses"=>'SubjectExamsController@add'));
+	Route::get('/addClass/{idsubject}', array(
+		"as"=>'lessons.add',
+		"uses"=>'LessonsController@add'));
 });
-
-

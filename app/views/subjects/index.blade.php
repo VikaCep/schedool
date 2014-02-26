@@ -29,7 +29,7 @@
 					<td>{{{ $subject->year }}}</td>
 					<td>{{{ Helpers::yesOrNo($subject->has_promotion) }}}</td>										
 					<td>{{ link_to_route('subjectExams.add', 'Add', array($subject->id), array('class' => 'button tiny add')) }}</td>
-                    <td>{{ link_to_route('subjects.edit', 'Add', array($subject->id), array('class' => 'button tiny add')) }}</td>
+                    <td>{{ link_to_route('lessons.add', 'Add', array($subject->id), array('class' => 'button tiny add')) }}</td>
                     <td>{{ link_to_route('subjects.edit', 'Edit', array($subject->id), array('class' => 'button tiny')) }}</td>
                     <td>
                         {{ Form::open(array('method' => 'DELETE', 'route' => array('subjects.destroy', $subject->id))) }}
