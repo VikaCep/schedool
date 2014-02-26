@@ -26,7 +26,7 @@ class AuthController extends \BaseController {
 	public function logoutAction()
 	{
 		Auth::logout();
-		return Redirect::route("auth/login")->with('flash_info', 'You are successfully logged out.');;
+		return Redirect::route("/")->with('flash_info', 'You are successfully logged out.');;
 	}
 
 }

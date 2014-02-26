@@ -28,7 +28,7 @@
 				<li class="{{Request::path() == 'subjects' ? 'active' : ''}}">{{ link_to_route('subjects.index', 'Subjects') }}</li>
 				<li class="{{Request::path() == 'calendar' ? 'active' : ''}}">{{ link_to_route('subjects.index', 'Calendar') }}</li>
 				@else
-				<li class="{{Request::path() == 'auth/login' ? 'active' : ''}}"><a href="{{ URL::route("auth/login") }}">Login</a></li>
+				<li class="{{Request::path() == 'auth/login' ? 'active' : ''}}"><a data-reveal-id="loginModal" data-reveal-ajax="true" href="{{ URL::route("auth/loginPopup") }}">Login</a></li>
 				@endif
 			</ul>
 			<ul class="right">
@@ -40,6 +40,7 @@
 	</nav>
 
 	<!-- End Top Bar -->
+	<div id="loginModal" class="reveal-modal" data-reveal></div>
 
 	<div class="row main">
 		<div class="large-12 columns">					
@@ -94,6 +95,7 @@
 	{{HTML::script("/js/global.js")}}	
 	{{HTML::script("/js/parsley.js")}}	
 	{{HTML::script('/packages/aheissenberger/foundation/js/foundation/foundation.js')}}
+	{{HTML::script('/packages/aheissenberger/foundation/js/foundation/foundation.reveal.js')}}
 	<script>
 		$(document).foundation();
 	</script>
