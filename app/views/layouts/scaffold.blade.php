@@ -40,7 +40,7 @@
 	</nav>
 
 	<!-- End Top Bar -->
-	<div id="loginModal" class="reveal-modal" data-reveal></div>
+	<div id="loginModal" class="reveal-modal small" data-reveal></div>
 
 	<div class="row main">
 		<div class="large-12 columns">					
